@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohd Sharik Saifi - Carpenter & Interior Specialist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://placehold.co/1920x1080/4a4a4a/ffffff?text=Modern+Interior') no-repeat center center/cover;
+        }
+        .section-title {
+            border-bottom: 3px solid #ca8a04; /* amber-600 */
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        /* Modal styles */
+        .modal-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+        }
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border-left-color: #ca8a04;
+            animation: spin 1s ease infinite;
+            margin: 0 auto 1rem;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-900">Mohd Sharik Saifi</a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#about" class="text-gray-600 hover:text-amber-600 transition">About</a>
+                <a href="#services" class="text-gray-600 hover:text-amber-600 transition">Services</a>
+                <a href="#projects" class="text-gray-600 hover:text-amber-600 transition">Projects</a>
+                <a href="#ai-generator" class="text-gray-600 hover:text-amber-600 transition">✨ AI Ideas</a>
+                <a href="#experience" class="text-gray-600 hover:text-amber-600 transition">Experience</a>
+                <a href="#contact" class="bg-amber-600 text-white px-4 py-2 rounded-md hover:bg-amber-700 transition">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-2">
+            <a href="#about" class="block px-6 py-2 text-gray-600 hover:bg-gray-100">About</a>
+            <a href="#services" class="block px-6 py-2 text-gray-600 hover:bg-gray-100">Services</a>
+            <a href="#projects" class="block px-6 py-2 text-gray-600 hover:bg-gray-100">Projects</a>
+            <a href="#ai-generator" class="block px-6 py-2 text-gray-600 hover:bg-gray-100">✨ AI Ideas</a>
+            <a href="#experience" class="block px-6 py-2 text-gray-600 hover:bg-gray-100">Experience</a>
+            <a href="#contact" class="block px-6 py-2 text-gray-600 hover:bg-gray-100">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-white h-[60vh] flex items-center">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Mohd Sharik Saifi</h1>
+            <p class="text-lg md:text-2xl font-light">Independent Carpenter & Interior Works Specialist</p>
+            <p class="text-md md:text-xl mt-2">5+ Years of Crafting Quality Spaces in Delhi NCR</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+
+        <!-- About Me Section -->
+        <section id="about" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-center mb-8 section-title">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center bg-white p-8 rounded-lg shadow-lg">
+                <div class="md:w-1/3 text-center mb-6 md:mb-0">
+                    <img src="https://placehold.co/200x200/e2e8f0/333333?text=M.S.S" alt="Mohd Sharik Saifi" class="rounded-full mx-auto w-40 h-40 object-cover border-4 border-amber-500">
+                </div>
+                <div class="md:w-2/3 md:pl-8">
+                    <p class="text-lg mb-4">
+                        I am a skilled and experienced carpenter with over five years of hands-on experience in furniture, modular interiors, ceiling work, and soundproofing. Based in Jaitpur, Delhi, I have a strong track record of delivering high-quality craftsmanship across the Delhi NCR region.
+                    </p>
+                    <p class="text-lg">
+                        My expertise lies in reading 2D layouts and transforming them into functional and beautiful spaces. Whether working independently or collaborating with designers and builders, my focus is always on quality, professionalism, and timely project completion.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title">My Services</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Cards... -->
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center service-card transition-transform duration-300">
+                    <i class="fas fa-kitchen-set fa-3x text-amber-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Modular Kitchens & Cabinets</h3>
+                    <p>Expert installation and fitting of modern modular kitchens and custom cabinets.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center service-card transition-transform duration-300">
+                    <i class="fas fa-door-closed fa-3x text-amber-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Wardrobe Design & Fitting</h3>
+                    <p>Custom wardrobe design and precision installation for optimal space utilization.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center service-card transition-transform duration-300">
+                    <i class="fas fa-person-shelter fa-3x text-amber-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">False & Gypsum Ceilings</h3>
+                    <p>Creating stylish and functional false ceilings to enhance interior aesthetics.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center service-card transition-transform duration-300">
+                    <i class="fas fa-volume-mute fa-3x text-amber-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Acoustic Soundproofing</h3>
+                    <p>Professional soundproofing solutions for offices, studios, and homes.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center service-card transition-transform duration-300">
+                    <i class="fas fa-chair fa-3x text-amber-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Custom Furniture Making</h3>
+                    <p>Building bespoke furniture pieces like beds, tables, and wooden units.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center service-card transition-transform duration-300">
+                    <i class="fas fa-ruler-combined fa-3x text-amber-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Blueprint Interpretation</h3>
+                    <p>Adept at reading and accurately executing 2D blueprints and layout plans.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Gallery Section -->
+        <section id="projects" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title">Project Gallery</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                 <!-- Project Cards... -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/600x400/d1d5db/333333?text=Modular+Kitchen" alt="Modular Kitchen Project" class="w-full h-56 object-cover">
+                    <div class="p-4"><h3 class="font-semibold">Modern Kitchen Installation</h3></div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/600x400/e5e7eb/333333?text=Fitted+Wardrobe" alt="Wardrobe Project" class="w-full h-56 object-cover">
+                    <div class="p-4"><h3 class="font-semibold">Custom Fitted Wardrobe</h3></div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/600x400/d1d5db/333333?text=False+Ceiling" alt="False Ceiling Project" class="w-full h-56 object-cover">
+                    <div class="p-4"><h3 class="font-semibold">Living Room False Ceiling</h3></div>
+                </div>
+                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/600x400/e5e7eb/333333?text=Office+Soundproofing" alt="Office Soundproofing Project" class="w-full h-56 object-cover">
+                    <div class="p-4"><h3 class="font-semibold">Commercial Office Acoustics</h3></div>
+                </div>
+                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/600x400/d1d5db/333333?text=Custom+Table" alt="Custom Furniture Project" class="w-full h-56 object-cover">
+                    <div class="p-4"><h3 class="font-semibold">Handcrafted Wooden Table</h3></div>
+                </div>
+                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/600x400/e5e7eb/333333?text=Commercial+Fit-out" alt="Commercial Project" class="w-full h-56 object-cover">
+                    <div class="p-4"><h3 class="font-semibold">Retail Space Fit-out</h3></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Project Idea Generator Section -->
+        <section id="ai-generator" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-center mb-2 section-title">✨ Project Idea Generator</h2>
+            <p class="text-center text-gray-600 mb-8">Need inspiration? Describe your space or need below and let AI suggest some ideas!</p>
+            <div class="bg-white p-8 rounded-lg shadow-lg max-w-3xl mx-auto">
+                <div class="flex flex-col sm:flex-row gap-4 mb-6">
+                    <input type="text" id="idea-input" placeholder="e.g., 'a small study room' or 'better kitchen storage'" class="flex-grow p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500">
+                    <button id="generate-ideas-btn" class="bg-amber-600 text-white px-6 py-3 rounded-md hover:bg-amber-700 transition font-semibold flex items-center justify-center">
+                        <i class="fas fa-lightbulb mr-2"></i> Generate Ideas
+                    </button>
+                </div>
+                <div id="idea-output" class="mt-6 p-6 bg-gray-50 rounded-lg border border-gray-200 min-h-[100px] text-gray-700 whitespace-pre-wrap">Enter a description above and click generate to see project ideas here.</div>
+            </div>
+        </section>
+
+        <!-- Experience & Expertise Section -->
+        <section id="experience" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title">Experience & Expertise</h2>
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+                <!-- Testimonial -->
+                <div class="mb-10 border-l-4 border-amber-500 pl-6">
+                    <h3 class="text-2xl font-semibold mb-4">Independent Contractor Reference</h3>
+                    <blockquote class="italic text-gray-600">
+                        "This is to certify that Mr. Mohd Sharik Saifi... has been working as an Independent Carpenter in the Delhi NCR region for the past 5 years (2019 to Present)... Mr. Sharik is known for his quality workmanship, professional attitude, and timely completion of work. We wish him all the best in his future assignments and recommend him for any suitable carpentry and interior work."
+                    </blockquote>
+                    <p class="text-right mt-4 font-semibold">- Independent Contractor Reference, Delhi-N
